@@ -109,6 +109,22 @@ textarea::placeholder{
     background: #D8DFE8;
 }
 
+.apresentacao__botoes__botao3{
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--dark-blue-300);
+    border: 1px solid;
+    border-radius: 24px;
+    border-color: var(--dark-blue-300);
+    width: 20.5rem;
+    height: 4.188rem;
+}
+
+.apresentacao__botoes__botao3:hover{
+    background: #D8DFE8;
+}
+
+
 .apresentacao__bloco__2{
     display: flex;
     box-sizing: border-box;
@@ -118,7 +134,7 @@ textarea::placeholder{
     
 
     background-color: white;
-    border-radius: 32px;
+    border-radius: 2rem;
     box-shadow: 0px 24px 32px -8px #00000014;
     margin: 2.5rem; 
     margin-left: 5rem;
@@ -160,7 +176,50 @@ textarea::placeholder{
     border: none;
     resize: none;
     outline: none;
-    pointer-events: none;
 }
 
+@media screen and (max-width: 768px) {
+    
+    .cabecalho{
+        margin-left: 0rem;
+    }
+    .apresentacao{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        align-items: center;
+        margin: 2.5rem;
+    }
+    
+    .apresentacao__botoes__botao1{
+        width:20.5rem;
+        margin-right: 1.5rem;
+    }
+    .apresentacao__botoes__botao2{
+        width: 20.5rem;
+    }
+    .apresentacao__botoes__botao3{
+        width: 100%;
+    }
+    .apresentacao__conteudo{
+        width: 43rem;
+    }
+
+    .apresentacao__bloco__2{
+        width: 43rem;
+        height: auto;
+        margin: 2.5rem; 
+        padding: 1rem;
+    }
+    .apresentacao__bloco__2__imagem{
+        display: none;
+    }
+    .apresentacao__bloco__2__textarea{
+        width: 39rem;
+        height: 8.313rem;
+        margin:2.5rem;
+    }
+
+
+}
 
