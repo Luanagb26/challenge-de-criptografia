@@ -32,6 +32,12 @@ body {
     background-color: var(--light-blue-100);
 }
 
+.cabecalho{
+    margin: 2.5rem;
+    margin-bottom: 0;
+    width: 50%;
+}
+
 .textarea__inserir__texto {
     background-color: var(--light-blue-100);
     border: none;
@@ -49,13 +55,6 @@ body {
 }
 textarea::placeholder{
     color: var(--dark-blue-300);
-}
-
-
-.cabecalho{
-    margin: 2.5rem;
-    margin-bottom: 0;
-    width: 50%;
 }
 
 .apresentacao{
@@ -105,10 +104,6 @@ textarea::placeholder{
     height: 4.188rem;
 }
 
-.apresentacao__botoes__botao2:hover{
-    background: #D8DFE8;
-}
-
 .apresentacao__botoes__botao3{
     background-color: transparent;
     font-size: 1rem;
@@ -120,7 +115,7 @@ textarea::placeholder{
     height: 4.188rem;
 }
 
-.apresentacao__botoes__botao3:hover{
+.apresentacao__botoes__botao2:hover, .apresentacao__botoes__botao3:hover{
     background: #D8DFE8;
 }
 
@@ -178,7 +173,7 @@ textarea::placeholder{
     outline: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and ( min-width: 376px) {
     
     .cabecalho{
         margin-left: 0rem;
@@ -223,3 +218,59 @@ textarea::placeholder{
 
 }
 
+@media screen and (max-width: 375px) {
+    
+    .cabecalho{
+        margin-left: 0rem;
+        margin-bottom: 5rem;
+    }
+    .textarea__inserir__texto{
+        width: auto;
+    }
+    .apresentacao{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        align-items: center;
+        box-sizing: border-box;
+        margin: 1rem;
+
+        width: auto;
+    }
+    .apresentacao__conteudo{
+        width: 100%;
+    }
+    .apresentacao__botoes__label{
+        margin-left: 0rem;
+    }
+    .apresentacao__botoes{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .apresentacao__botoes__botao1{
+        width:100%;
+        margin-bottom: 1.5rem;
+    }
+    .apresentacao__botoes__botao2{
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+    .apresentacao__botoes__botao3{
+        width: 100%;
+    }
+    .apresentacao__bloco__2{
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        margin: 0rem;
+    }
+    .apresentacao__bloco__2__imagem{
+        display: none;
+    }
+    .apresentacao__bloco__2__textarea{
+        width: 100%;
+        height: 27rem;
+    }
+
+}
