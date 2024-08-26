@@ -1,7 +1,7 @@
 const letrasComChaves = 
 { "e" : "enter", 
   "i" : "imes",
-  "a" : "ai",  // alterar a ordem resolve o bug do i
+  "a" : "ai",  
   "o" : "ober" ,
   "u" : "ufat"  
 };
@@ -77,12 +77,11 @@ document.addEventListener("DOMContentLoaded", function copiar(){
             let texto;
             const textoCodificado = document.getElementById("textoCodificado");
             const textoDecodificado = document.getElementById("textoDecodificado");
-    
-           
-                if (textoCodificado.style.display == "block") {
-                    texto = textoCodificado.innerText;
-                } else if (textoDecodificado.style.display == "block") {
-                    texto = textoDecodificado.innerText;
+               
+                if (window.getComputedStyle(textoCodificado).display == "block") {
+                    texto = textoCodificado.value;
+                } else if (window.getComputedStyle(textoDecodificado).display == "block") {
+                    texto = textoDecodificado.value;
                 } else {
                     throw new Error('Nenhum texto encontrado para copiar.');
                 }
@@ -100,12 +99,31 @@ document.addEventListener("DOMContentLoaded", function copiar(){
         }
 });
 
+function verificarCampoVazio(campo){
+
+        if (campo.value.trim() === ""){
+            console.log("vazia");
+            console.log("Valor texto:",campo.value);
+            tornarVisivel("bloco2");
+            return tornarInvisivel("resultadoTexto");
+            
+        } else{
+            console.log("Else Valor texto:",campo.value);
+            tornarInvisivel("bloco2");
+            tornarVisivel("resultadoTexto");
+        }
+        
+       
+    
+}
+
 function exibirTexto(){
     
     let paragrafoTextoOriginal = document.querySelector("#textoOriginal");
     paragrafoTextoOriginal.textContent = getTextoOriginal();
-    tornarInvisivel("bloco2");
-    tornarVisivel("resultadoTexto");
+    
+    verificarCampoVazio(paragrafoTextoOriginal);
+    
 }
 
 function tornarInvisivel(object){
@@ -118,4 +136,4 @@ function tornarVisivel(object){
 
 tornarInvisivel("resultadoTexto");
 
-//exibirTexto();
+
