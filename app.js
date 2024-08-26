@@ -6,7 +6,6 @@ const letrasComChaves =
   "u" : "ufat"  
 };
 let chavesComLetras = gerarArrayChaveValorInverso(letrasComChaves);
-console.log(chavesComLetras);
 let textoCodificado ;
 
 
@@ -46,7 +45,6 @@ function gerarArrayChaveValorInverso(letrasChaves){
     for (let chave in letrasChaves){
         inverso[letrasChaves[chave]] = chave;
     }
-    console.log(inverso)
     return inverso;
 
 }
@@ -72,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function copiar(){
             botao.addEventListener("click", async function() {
                 botao.disabled = true;
         try {
-            console.log("Botão clicado");
             
             let texto;
             const textoCodificado = document.getElementById("textoCodificado");
@@ -102,13 +99,10 @@ document.addEventListener("DOMContentLoaded", function copiar(){
 function verificarCampoVazio(campo){
 
         if (campo.value.trim() === ""){
-            console.log("vazia");
-            console.log("Valor texto:",campo.value);
             tornarVisivel("bloco2");
             return tornarInvisivel("resultadoTexto");
             
         } else{
-            console.log("Else Valor texto:",campo.value);
             tornarInvisivel("bloco2");
             tornarVisivel("resultadoTexto");
         }
